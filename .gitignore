@@ -1,0 +1,10 @@
+./vendor
+*.log
+.DS_Store
+/.idea
+/.nova
+/.vscode
+/.zed
+Thumbs.db
+/reports
+/var

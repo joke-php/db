@@ -24,7 +24,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Vasoft\\Joke\\Db\\Tests\\": "tests/"
+      "Vasoft\\Joke\\Db\\Tests\\": "tests/",
+      "Vasoft\\Joke\\Db\\Demo\\": "demo/"
     }
   },
   "scripts": {

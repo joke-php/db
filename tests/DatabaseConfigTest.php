@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use Vasoft\Joke\Config\Exceptions\ConfigException;
 use Vasoft\Joke\Db\DatabaseConfig;
-use Vasoft\Joke\Db\Demo\Json\JsonConnection;
+use Vasoft\Joke\Db\Demo\Driver\MemoryConnection;
 
 /**
  * @coversDefaultClass \Vasoft\Joke\Db\DatabaseConfig
@@ -24,17 +24,17 @@ final class DatabaseConfigTest extends TestCase
     public function testConnectionVariants(): void
     {
         $config = new DatabaseConfig()
-            ->addConnection('example1', JsonConnection::class)
-            ->addConnection('example2', new JsonConnection())
-            ->addConnection('example3', static fn() => new JsonConnection());
+            ->addConnection('example1', MemoryConnection::class)
+            ->addConnection('example2', new MemoryConnection())
+            ->addConnection('example3', static fn() => new MemoryConnection());
 
         self::assertSame(
-            JsonConnection::class,
+            MemoryConnection::class,
             $config->getConnection('example1'),
             'Конфигурация не приняла имя класса',
         );
         self::assertInstanceOf(
-            JsonConnection::class,
+            MemoryConnection::class,
             $config->getConnection('example2'),
             'Конфигурация не приняла экземпляр класса',
         );
@@ -45,9 +45,9 @@ final class DatabaseConfigTest extends TestCase
     public function testDefaultConnectionName(): void
     {
         $config = new DatabaseConfig()
-            ->addConnection('example10', JsonConnection::class)
-            ->addConnection('example2', new JsonConnection())
-            ->addConnection('example31', static fn() => new JsonConnection());
+            ->addConnection('example10', MemoryConnection::class)
+            ->addConnection('example2', new MemoryConnection())
+            ->addConnection('example31', static fn() => new MemoryConnection());
         self::assertSame('', $config->defaultConnectionName, 'Имя по умолчанию изначально не задано');
         $config->freeze();
         self::assertSame(
@@ -61,9 +61,9 @@ final class DatabaseConfigTest extends TestCase
     public function testSetDefaultName(): void
     {
         $config = new DatabaseConfig()
-            ->addConnection('example10', JsonConnection::class)
-            ->addConnection('example2', new JsonConnection())
-            ->addConnection('example31', static fn() => new JsonConnection());
+            ->addConnection('example10', MemoryConnection::class)
+            ->addConnection('example2', new MemoryConnection())
+            ->addConnection('example31', static fn() => new MemoryConnection());
         $config->setDefaultConnectionName('example31');
         $config->freeze();
         self::assertSame('example31', $config->defaultConnectionName);
@@ -83,7 +83,7 @@ final class DatabaseConfigTest extends TestCase
     #[TestDox('После заморозки нельзя менять имя соединения по умолчанию')]
     public function testSetDefaultNameFrozen(): void
     {
-        $config = new DatabaseConfig()->addConnection('example10', JsonConnection::class);
+        $config = new DatabaseConfig()->addConnection('example10', MemoryConnection::class);
         self::expectException(ConfigException::class);
         self::expectExceptionMessageIs(
             'Cannot modify frozen configuration of [Vasoft\Joke\Db\DatabaseConfig].',
@@ -95,19 +95,19 @@ final class DatabaseConfigTest extends TestCase
     #[TestDox('После заморозки добавлять соединения возможно')]
     public function testAddConnectionAfterFreeze(): void
     {
-        $config = new DatabaseConfig()->addConnection('example1', JsonConnection::class);
+        $config = new DatabaseConfig()->addConnection('example1', MemoryConnection::class);
         $config->freeze();
-        $config->addConnection('example2', new JsonConnection());
+        $config->addConnection('example2', new MemoryConnection());
 
-        self::assertInstanceOf(JsonConnection::class, $config->getConnection('example2'));
+        self::assertInstanceOf(MemoryConnection::class, $config->getConnection('example2'));
     }
 
     #[TestDox('Повторная регистрация с тем же именем перезаписывает')]
     public function testRewriteConnection(): void
     {
-        $entity = new JsonConnection();
+        $entity = new MemoryConnection();
         $config = new DatabaseConfig()
-            ->addConnection('example1', JsonConnection::class)
+            ->addConnection('example1', MemoryConnection::class)
             ->setDefaultConnectionName('example1')
             ->addConnection('example1', $entity);
 
@@ -118,13 +118,13 @@ final class DatabaseConfigTest extends TestCase
     public function testRewriteConnectionAfterFreeze(): void
     {
         $config = new DatabaseConfig()
-            ->addConnection('example1', JsonConnection::class)
+            ->addConnection('example1', MemoryConnection::class)
             ->freeze();
         self::expectException(ConfigException::class);
         self::expectExceptionMessageIs(
             "Cannot replace the default connection 'example1' after configuration is frozen.",
         );
-        $config->addConnection('example1', new JsonConnection());
+        $config->addConnection('example1', new MemoryConnection());
     }
 
     #[TestDox('Соединение необходимо зарегистрировать прежде чем назначать соединением по умолчанию.')]
@@ -159,9 +159,9 @@ final class DatabaseConfigTest extends TestCase
     #[TestDox('Возвращает соединение по умолчанию если не указано имя')]
     public function testGetDefaultConnection(): void
     {
-        $entity = new JsonConnection();
+        $entity = new MemoryConnection();
         $config = new DatabaseConfig()
-            ->addConnection('example1', JsonConnection::class)
+            ->addConnection('example1', MemoryConnection::class)
             ->addConnection('example2', $entity)
             ->setDefaultConnectionName('example2');
 

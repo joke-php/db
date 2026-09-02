@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Demo\Json;
+namespace Vasoft\Joke\Db\Demo\Driver;
 
 use Vasoft\Joke\Db\Contract\ResultInterface;
 
 /**
- * Реализация ResultInterface для JSON-хранилища (демонстрационная).
+ * Реализация ResultInterface для хранилища (демонстрационная).
  *
  * Данные полностью буферизуются в памяти при создании объекта.
  * Поддерживает многократную итерацию и чтение.
  */
-class JsonResult implements ResultInterface
+class Result implements ResultInterface
 {
     /**
      * @param list<array<string,mixed>> $data записи результата

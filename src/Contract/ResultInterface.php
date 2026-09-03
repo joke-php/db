@@ -26,9 +26,9 @@ interface ResultInterface extends \IteratorAggregate, \Countable
      * Возвращает первую строку результата в виде ассоциативного массива,
      * или null, если результат пуст.
      *
-     * @return null|array<string, mixed>
+     * @return array<string, mixed>|false
      */
-    public function one(): ?array;
+    public function one(): false|array;
 
     /**
      * Возвращает количество строк в результате.

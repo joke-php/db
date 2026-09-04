@@ -293,6 +293,7 @@ final class DriverTest extends TestCase
 
         Driver::ODBC->dsn($config);
     }
+
     #[TestDox('buildDsn Выбрасывает исключение если запрошен неизвестный драйвер')]
     public function testBuildDsnUnknownDriver(): void
     {
@@ -303,6 +304,7 @@ final class DriverTest extends TestCase
 
         Driver::buildDsn($config);
     }
+
     #[TestDox('buildDsn возвращает строку на основе конфига')]
     public function testBuildDsn(): void
     {

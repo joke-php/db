@@ -15,7 +15,7 @@ namespace Vasoft\Joke\Db\Exceptions;
  */
 class ConnectionException extends DatabaseException
 {
-    public function __construct(string $message = '', int $code = 0, ?\Throwable $previous = null)
+    public function __construct(?string $message = null, int $code = 0, ?\Throwable $previous = null)
     {
         parent::__construct(
             $message ?? 'Connection failed.',

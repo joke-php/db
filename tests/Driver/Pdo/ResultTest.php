@@ -133,6 +133,7 @@ final class ResultTest extends TestCase
         $result = new Result($statement);
 
         self::expectException(QueryException::class);
+        self::expectExceptionMessageIs('Fetch failed');
 
         $result->one();
     }
@@ -147,6 +148,7 @@ final class ResultTest extends TestCase
         $result = new Result($statement);
 
         self::expectException(QueryException::class);
+        self::expectExceptionMessageIs('Fetch failed');
         $rows = [];
         foreach ($result as $row) {
             $rows[] = $row;
@@ -163,6 +165,7 @@ final class ResultTest extends TestCase
         $result = new Result($statement);
 
         self::expectException(QueryException::class);
+        self::expectExceptionMessageIs('Count failed');
 
         $result->count();
     }

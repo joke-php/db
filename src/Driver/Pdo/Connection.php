@@ -131,7 +131,7 @@ class Connection implements ConnectionInterface
             if (0 === $this->transactionLevel) {
                 $pdo->beginTransaction();
             } else {
-                $pdo->exec('SAVEPOINT ' . static::SAVE_POINT_PREFIX . $this->transactionLevel + 1);
+                $pdo->exec('SAVEPOINT ' . static::SAVE_POINT_PREFIX . ($this->transactionLevel + 1));
             }
             ++$this->transactionLevel;
         } catch (\PDOException $e) {

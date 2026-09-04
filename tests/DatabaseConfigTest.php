@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Tests;
+namespace Vasoft\Joke\Db\Sql\Tests;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use Vasoft\Joke\Config\Exceptions\ConfigException;
-use Vasoft\Joke\Db\DatabaseConfig;
-use Vasoft\Joke\Db\Demo\Driver\MemoryConnection;
+use Vasoft\Joke\Db\Sql\DatabaseConfig;
+use Vasoft\Joke\Db\Sql\Demo\Driver\MemoryConnection;
 
 /**
- * @coversDefaultClass \Vasoft\Joke\Db\DatabaseConfig
+ * @coversDefaultClass \Vasoft\Joke\Db\Sql\DatabaseConfig
  *
  * @internal
  */
@@ -86,7 +86,7 @@ final class DatabaseConfigTest extends TestCase
         $config = new DatabaseConfig()->addConnection('example10', MemoryConnection::class);
         self::expectException(ConfigException::class);
         self::expectExceptionMessageIs(
-            'Cannot modify frozen configuration of [Vasoft\Joke\Db\DatabaseConfig].',
+            'Cannot modify frozen configuration of [Vasoft\Joke\Db\Sql\DatabaseConfig].',
         );
         $config->freeze();
         $config->setDefaultConnectionName('example31');

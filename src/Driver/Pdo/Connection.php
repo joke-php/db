@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Driver\Pdo;
+namespace Vasoft\Joke\Db\Sql\Driver\Pdo;
 
-use Vasoft\Joke\Db\Contract\ConnectionInterface;
-use Vasoft\Joke\Db\Contract\ResultInterface;
-use Vasoft\Joke\Db\Exceptions\QueryException;
+use Vasoft\Joke\Db\Sql\Contract\ConnectionInterface;
+use Vasoft\Joke\Db\Sql\Contract\ResultInterface;
+use Vasoft\Joke\Db\Sql\Exceptions\QueryException;
 use Vasoft\Joke\Db\Sql\SqlConnectionConfig;
 
 /**

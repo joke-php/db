@@ -2,24 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Tests;
+namespace Vasoft\Joke\Db\Sql\Tests;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use Vasoft\Joke\Config\Exceptions\ConfigException;
 use Vasoft\Joke\Container\ServiceContainer;
-use Vasoft\Joke\Db\ConnectionManager;
-use Vasoft\Joke\Db\DatabaseConfig;
-use Vasoft\Joke\Db\Demo\Driver\JsonConnection;
-use Vasoft\Joke\Db\Demo\Driver\MemoryConnection;
-use Vasoft\Joke\Db\Exceptions\ConnectionException;
+use Vasoft\Joke\Db\Sql\ConnectionManager;
+use Vasoft\Joke\Db\Sql\DatabaseConfig;
+use Vasoft\Joke\Db\Sql\Demo\Driver\JsonConnection;
+use Vasoft\Joke\Db\Sql\Demo\Driver\MemoryConnection;
+use Vasoft\Joke\Db\Sql\Exceptions\ConnectionException;
 use Vasoft\Joke\Support\FileSystem;
 
 /**
  * @internal
  *
- * @coversDefaultClass \Vasoft\Joke\Db\ConnectionManager
+ * @coversDefaultClass \Vasoft\Joke\Db\Sql\ConnectionManager
  */
 #[CoversClass(ConnectionManager::class)]
 #[TestDox('ConnectionManager - менеджер соединений с базами данных')]
@@ -138,7 +138,7 @@ final class ConnectionManagerTest extends TestCase
 
         self::expectException(ConnectionException::class);
         self::expectExceptionMessageIs(
-            "Connection 'example1' does not implement 'Vasoft\\Joke\\Db\\Contract\\ConnectionInterface'.",
+            "Connection 'example1' does not implement 'Vasoft\\Joke\\Db\\Sql\\Contract\\ConnectionInterface'.",
         );
         $manager->connection('example1');
     }

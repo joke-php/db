@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Tests\Driver\Pdo;
+namespace Vasoft\Joke\Db\Sql\Tests\Driver\Pdo;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
-use Vasoft\Joke\Db\Driver\Pdo\Result;
+use Vasoft\Joke\Db\Sql\Driver\Pdo\Result;
 use PHPUnit\Framework\TestCase;
-use Vasoft\Joke\Db\Exceptions\QueryException;
+use Vasoft\Joke\Db\Sql\Exceptions\QueryException;
 
 /**
  * @internal
  *
- * @coversDefaultClass \Vasoft\Joke\Db\Driver\Pdo\Result
+ * @coversDefaultClass \Vasoft\Joke\Db\Sql\Driver\Pdo\Result
  */
 #[CoversClass(Result::class)]
 #[TestDox('Result - обертка над PDOStatement')]

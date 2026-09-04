@@ -1,5 +1,5 @@
 {
-  "name": "joke-php/db",
+  "name": "joke-php/db-sql",
   "description": "Database integration for Joke framework",
   "type": "library",
   "version": "0.0.1",
@@ -20,13 +20,13 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Vasoft\\Joke\\Db\\": "src/"
+      "Vasoft\\Joke\\Db\\Sql\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Vasoft\\Joke\\Db\\Tests\\": "tests/",
-      "Vasoft\\Joke\\Db\\Demo\\": "demo/"
+      "Vasoft\\Joke\\Db\\Sql\\Tests\\": "tests/",
+      "Vasoft\\Joke\\Db\\Sql\\Demo\\": "demo/"
     }
   },
   "scripts": {

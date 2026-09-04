@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Demo\Driver;
+namespace Vasoft\Joke\Db\Sql\Demo\Driver;
 
-use Vasoft\Joke\Db\Contract\ResultInterface;
+use Vasoft\Joke\Db\Sql\Contract\ResultInterface;
 
 /**
  * Реализация ResultInterface для хранилища (демонстрационная).

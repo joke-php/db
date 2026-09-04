@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Tests\Exceptions;
+namespace Vasoft\Joke\Db\Sql\Tests\Exceptions;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
-use Vasoft\Joke\Db\Exceptions\ConnectionException;
+use Vasoft\Joke\Db\Sql\Exceptions\ConnectionException;
 
 /**
  * @internal
  *
- * @coversDefaultClass \Vasoft\Joke\Db\Exceptions\ConnectionException
+ * @coversDefaultClass \Vasoft\Joke\Db\Sql\Exceptions\ConnectionException
  */
 #[TestDox('ConnectionException - исключения связанные с соединениями')]
 #[CoversClass(ConnectionException::class)]

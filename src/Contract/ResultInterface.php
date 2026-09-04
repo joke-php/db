@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Contract;
+namespace Vasoft\Joke\Db\Sql\Contract;
 
 /**
  * Представляет результат выполнения запроса к базе данных.

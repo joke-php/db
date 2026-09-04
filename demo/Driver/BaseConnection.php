@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Demo\Driver;
+namespace Vasoft\Joke\Db\Sql\Demo\Driver;
 
-use Vasoft\Joke\Db\Contract\ConnectionInterface;
-use Vasoft\Joke\Db\Contract\ResultInterface;
-use Vasoft\Joke\Db\Exceptions\QueryException;
-use Vasoft\Joke\Db\Exceptions\TransactionException;
+use Vasoft\Joke\Db\Sql\Contract\ConnectionInterface;
+use Vasoft\Joke\Db\Sql\Contract\ResultInterface;
+use Vasoft\Joke\Db\Sql\Exceptions\QueryException;
+use Vasoft\Joke\Db\Sql\Exceptions\TransactionException;
 
 /**
  * Демонстрационная реализация ConnectionInterface на основе внутреннего массива.

@@ -3,17 +3,17 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Tests\Exceptions;
+namespace Vasoft\Joke\Db\Sql\Tests\Exceptions;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
-use Vasoft\Joke\Db\Exceptions\QueryException;
+use Vasoft\Joke\Db\Sql\Exceptions\QueryException;
 
 /**
  * @internal
  *
- * @coversDefaultClass \Vasoft\Joke\Db\Exceptions\QueryException
+ * @coversDefaultClass \Vasoft\Joke\Db\Sql\Exceptions\QueryException
  */
 #[TestDox('QueryException - исключения связанные с запросами')]
 #[CoversClass(QueryException::class)]

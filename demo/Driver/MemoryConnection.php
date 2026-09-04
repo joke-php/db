@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Demo\Driver;
+namespace Vasoft\Joke\Db\Sql\Demo\Driver;
 
-use Vasoft\Joke\Db\Contract\ConnectionInterface;
+use Vasoft\Joke\Db\Sql\Contract\ConnectionInterface;
 
 /**
  * Демонстрационная реализация ConnectionInterface на основе внутреннего массива.

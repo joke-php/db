@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Driver\Pdo;
+namespace Vasoft\Joke\Db\Sql\Driver\Pdo;
 
 use Vasoft\Joke\Config\Exceptions\ConfigException;
 use Vasoft\Joke\Db\Sql\SqlConnectionConfig;

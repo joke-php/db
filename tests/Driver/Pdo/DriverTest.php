@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Tests\Driver\Pdo;
+namespace Vasoft\Joke\Db\Sql\Tests\Driver\Pdo;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
 use Vasoft\Joke\Config\Exceptions\ConfigException;
-use Vasoft\Joke\Db\Driver\Pdo\Driver;
+use Vasoft\Joke\Db\Sql\Driver\Pdo\Driver;
 use Vasoft\Joke\Db\Sql\SqlConnectionConfig;
 
 /**
  * @internal
  *
- * @coversDefaultClass \Vasoft\Joke\Db\Driver\Pdo\Driver
+ * @coversDefaultClass \Vasoft\Joke\Db\Sql\Driver\Pdo\Driver
  */
 #[CoversClass(Driver::class)]
 #[TestDox('Driver - генератор DSN строк для PDO')]

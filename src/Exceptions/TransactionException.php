@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Exceptions;
+namespace Vasoft\Joke\Db\Sql\Exceptions;
 
 /**
  * Исключение, возникающее при ошибках управления транзакциями.

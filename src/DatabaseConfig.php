@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db;
+namespace Vasoft\Joke\Db\Sql;
 
 use Vasoft\Joke\Config\AbstractConfig;
-use Vasoft\Joke\Db\Contract\ConnectionInterface;
+use Vasoft\Joke\Db\Sql\Contract\ConnectionInterface;
 use Vasoft\Joke\Config\Exceptions\ConfigException;
 
 /**

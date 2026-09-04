@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db;
+namespace Vasoft\Joke\Db\Sql;
 
 use Vasoft\Joke\Config\Exceptions\ConfigException;
 use Vasoft\Joke\Container\Exceptions\ParameterResolveException;
 use Vasoft\Joke\Container\ServiceContainer;
-use Vasoft\Joke\Db\Contract\ConnectionInterface;
-use Vasoft\Joke\Db\Exceptions\ConnectionException;
+use Vasoft\Joke\Db\Sql\Contract\ConnectionInterface;
+use Vasoft\Joke\Db\Sql\Exceptions\ConnectionException;
 
 /**
  * Менеджер подключений к базе данных.

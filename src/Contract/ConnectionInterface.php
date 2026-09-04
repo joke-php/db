@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Contract;
+namespace Vasoft\Joke\Db\Sql\Contract;
 
-use Vasoft\Joke\Db\Exceptions\QueryException;
+use Vasoft\Joke\Db\Sql\Exceptions\QueryException;
 
 /**
  * Контракт подключения к базе данных.

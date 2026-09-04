@@ -4,19 +4,19 @@
 
 declare(strict_types=1);
 
-namespace Vasoft\Joke\Db\Tests\Driver\Pdo;
+namespace Vasoft\Joke\Db\Sql\Tests\Driver\Pdo;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestDox;
 use PHPUnit\Framework\TestCase;
-use Vasoft\Joke\Db\Driver\Pdo\Connection;
-use Vasoft\Joke\Db\Exceptions\QueryException;
+use Vasoft\Joke\Db\Sql\Driver\Pdo\Connection;
+use Vasoft\Joke\Db\Sql\Exceptions\QueryException;
 use Vasoft\Joke\Db\Sql\SqlConnectionConfig;
 
 /**
  * @internal
  *
- * @coversDefaultClass \Vasoft\Joke\Db\Driver\Pdo\Connection
+ * @coversDefaultClass \Vasoft\Joke\Db\Sql\Driver\Pdo\Connection
  */
 #[TestDox('PDO\Connection - обертка над PDO')]
 #[CoversClass(Connection::class)]
